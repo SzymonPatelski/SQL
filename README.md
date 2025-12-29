@@ -38,7 +38,7 @@ SET datestyle = DMY;
 -- Loaded data
 # SQL Analysis
 
-1. Which drinks generate the highest total profit?
+QUESTION 1. Which drinks generate the highest total profit?
 
 Query:
 ```sql
@@ -62,3 +62,33 @@ Key Insights:
 - Profit calculated as: (selling_price - purchase_price) × units_sold
 
 Conclusion: Identified high-value products that drive revenue and should be prioritized in inventory management.
+
+QUESTION 2. Which drinks have high sales volume but low profit margins?
+
+Query:
+```sql
+WITH low_margin_drinks AS (
+    SELECT 
+        (((selling_price/purchase_price)*100)-100) AS profit_margin,
+        drink,
+        product_id
+    FROM product_dim
+    WHERE purchase_price > 0  -- Exclude promotional items
+      AND (((selling_price/purchase_price)*100)-100) < 30
+)
+SELECT
+    low_margin_drinks.drink,
+    low_margin_drinks.profit_margin,
+    SUM(sold) AS total_sold
+FROM inventory_fact
+INNER JOIN low_margin_drinks ON inventory_fact.product_id = low_margin_drinks.product_id
+GROUP BY low_margin_drinks.drink, low_margin_drinks.profit_margin
+ORDER BY total_sold DESC;
+```
+
+Key Insights:
+- 'Malt' is the clear winner with 449 units sold but only 20% profit margin
+- High sales volume but low profitability - potential candidate for repricing
+
+Business Impact: Identified product where small price increases could significantly boost overall profit without drastically affecting sales volume.
+

@@ -1,0 +1,17 @@
+
+with low_margin_drinks AS (
+SELECT (((selling_price/purchase_price)*100)-100) AS profit_margin,
+drink,
+product_id
+from product_dim
+where purchase_price > 0 -- excluding promotional item
+and (((selling_price/purchase_price)*100)-100) < 30
+order by profit_margin DESC)
+SELECT
+sum(sold) AS total_sold,
+drink,
+low_margin_drinks.profit_margin
+from inventory_fact
+INNER JOIN low_margin_drinks ON inventory_fact.product_id = low_margin_drinks.product_id
+group by low_margin_drinks.profit_margin, low_margin_drinks.drink
+order BY total_sold DESC
