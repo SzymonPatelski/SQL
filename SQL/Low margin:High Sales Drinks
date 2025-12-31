@@ -13,5 +13,6 @@ drink,
 low_margin_drinks.profit_margin
 from inventory_fact
 INNER JOIN low_margin_drinks ON inventory_fact.product_id = low_margin_drinks.product_id
+where sold >= 0  -- Exclude invalid sales data
 group by low_margin_drinks.profit_margin, low_margin_drinks.drink
 order BY total_sold DESC
