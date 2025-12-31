@@ -1,4 +1,4 @@
-# Quick Results
+# Key Results
 
 Trophy: 24% of sales and profit → core product; maintain stock and pricing
 
@@ -32,9 +32,6 @@ Analyse temporal sales patterns to inform staffing, stock replenishment, and pro
 
 Which low-activity products might be removed or reprioritised?
 Identify drinks with negligible sales that tie up stock or operational resources, to support menu rationalisation or clearance decisions.
-
-
-
 
 # Data Cleaning & Preparation
 
@@ -285,3 +282,19 @@ Prioritise stock availability of high-margin drinks ahead of Sunday to avoid los
 Use targeted Sunday promotions to maximise revenue during the highest-demand period rather than discounting slower days
 
 Sunday represents the most commercially critical trading day, where operational decisions have an outsized impact on weekly performance
+
+# Conclusion
+
+This project demonstrates an end-to-end analytical workflow, combining SQL for data extraction, Excel for data cleaning, and Tableau for interactive visualisation to generate actionable business insights. By examining sales, profitability, inventory, and temporal trends, the analysis provides clear recommendations for operational and strategic decisions.
+
+Key takeaways include:
+
+Core profit drivers: Trophy beer accounts for 24% of both sales and profit, making it a stable, high-priority product. Maintaining stock and protecting pricing is essential.
+
+High-volume, low-margin products: Malt is popular but underperforms in profitability. A controlled price increase to £5 could significantly improve per-unit and total profit with minimal downside.
+
+Inventory inefficiencies: Star is overstocked relative to its low sales, tying up capital unnecessarily. Low-activity products like Flying Fish could be temporarily removed or deprioritised to free capacity.
+
+Operational timing: Sales peak on Sundays, nearly doubling other days. Staffing, stock allocation, and promotions should be adjusted accordingly to maximise revenue.
+
+Overall, these insights demonstrate how data can drive smarter pricing, inventory management, and operational planning, turning raw sales data into practical business decisions.
