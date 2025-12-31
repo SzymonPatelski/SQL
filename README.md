@@ -1,14 +1,31 @@
+# Table of Contents
+- Key Results
+- Technologies Used
+- Project Overview
+- Business Questions
+- Data Cleaning
+- SQL Analysis
+- Tableau Dashboard
+- Conclusion
+
 # Key Results
 
-Trophy: 24% of sales and profit → core product; maintain stock and pricing
+ Trophy: 24% of sales & profit → Core product requiring consistent availability  
 
-Malt: High volume, low margin → price increase to £5 could boost profitability by ~215% per unit
+ Malt: High volume (449 units), low margin (20%) → Price increase to £5 could boost profit by 149%  
 
-Star: Greatly overstocked relative to low sales → reduce stock to free capacity
+ Star: Overstocked (22 days inventory) → Reduce stock by 50%  
 
-Flying Fish: Near-zero sales → consider temporary removal or minimal stocking
+ Flying Fish: Near-zero sales (0.07/day) → Consider removal  
 
-Sales timing: Sunday is peak → adjust staffing, stock, and promotions accordingly
+ Sunday: Peak sales day (110 avg) → 2x other days, adjust operations accordingly
+
+# Technologies Used
+
+- SQL (PostgreSQL) - Data extraction and analysis
+- Excel - Data cleaning and standardization
+- Tableau - Interactive dashboard creation
+- Git/GitHub - Version control and project documentation
 
 # Project Overview
 
@@ -191,11 +208,17 @@ Key Insight:
 
 # TABLEU CREATION
 
+interactive dashboard avaialable at: https://public.tableau.com/app/profile/szymon.patelski/viz/Salutation/Dashboard1?publish=yes
+
+PNG available at [Dashboard/Salutation Dashboard]
+
 This Tableau dashboard visualises sales, profit, and inventory data for a drinks business. The dashboard is designed to help identify high-performing products, inefficiencies in pricing and inventory allocation, and temporal sales patterns that can inform purchasing and staffing decisions.
 
 **Highest total profit contributors**
 
 VISUALISATION:
+
+Graph available in [Dashboard/Highest Profit]
 
 A ranked horizontal bar chart was used to display total profit by drink, sorted in descending order. This format allows the most profitable products to be identified immediately and makes relative differences between drinks clear.
 
@@ -214,6 +237,8 @@ Trophy should be protected from heavy discounting, as its current pricing alread
 The product is well-suited for bundling or cross-selling rather than price-led promotions
 
 **High Sales,Low Profit Margin**
+
+Graph available in [Dashboard/High Sales Low Margin]
 
 VISUALISATION:
 A bar chart was used to compare sales volume and profit margin by drink, making it easy to identify products with strong demand but weak profitability. This format supports clear, side-by-side comparison across the full product range.
@@ -236,6 +261,8 @@ This makes Malt a strong candidate for a controlled pricing test, with post-chan
 
 
 **Which stick is oversuplied in compared to sales**
+
+Graph available in [Dashboard/Oversupply]
 
 VISUALISATION:
 
@@ -267,6 +294,8 @@ Reallocate shelf space and purchasing focus toward higher-performing drinks
 
 **Average Sales by day of week**
 
+Graph available in [Dashboard/Sales By Day]
+
 VISUALISATION:
 
 A Coloured bar chart was used to display total sales by day of the week, allowing clear comparison of sales volume across trading days. This allows for immediate noticing of weekly patterns.
@@ -282,6 +311,21 @@ Prioritise stock availability of high-margin drinks ahead of Sunday to avoid los
 Use targeted Sunday promotions to maximise revenue during the highest-demand period rather than discounting slower days
 
 Sunday represents the most commercially critical trading day, where operational decisions have an outsized impact on weekly performance
+
+# Recommendations & Next Steps
+
+Immediate Actions (Week 1)
+
+- Reduce Star inventory by 50% (currently holding 22 days of stock)
+- Test Malt price increase to £5 (improve margin from 20% to 40%)
+- Increase Sunday staffing to handle 2x average daily volume
+
+ Longer-Term Actions (Month 1-3)
+
+- Remove Flying Fish from regular orders (0.07 sales/day justifies discontinuation)
+- Prioritize Trophy restocking before weekends (24% of profit depends on availability)
+- Review low-margin, high-volume drinks for similar repricing opportunities
+
 
 # Conclusion
 
